@@ -23,7 +23,7 @@ DebugLogs::~DebugLogs()
 	CloseHandle(this->hLogFile);
 }
 
-_Success_(return == TRUE )
+_Success_(return == TRUE)
 BOOL DebugLogs::AddString( _In_ LPCWSTR pwszLogString, _In_ DWORD dwStringSize )
 {
 	////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -45,7 +45,7 @@ end:
 	return bReturnValue;
 }
 
-_Success_(return == TRUE )
+_Success_(return == TRUE)
 BOOL DebugLogs::AddErrorCode( _In_ DWORD dwErrorCode )
 {
 	////////////////////////////////////////////////////////////////////////////////////////////////////
