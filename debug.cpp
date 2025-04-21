@@ -11,7 +11,7 @@ DebugLogs::DebugLogs( _In_ LPCWSTR pwszLogFilePath )
 	////////////////////////////////////////////////////////////////////////////////////////////////////
 	
 	this->hLogFile = CreateFileW( 	pwszLogFilePath, GENERIC_WRITE, FILE_SHARE_READ | FILE_SHARE_WRITE,
-									NULL, CREATE_ALWAYS, FILE_ATTRIBUTE_NORMAL, NULL );
+					NULL, CREATE_ALWAYS, FILE_ATTRIBUTE_NORMAL, NULL );
 }
 
 DebugLogs::~DebugLogs()
@@ -76,18 +76,18 @@ void DebugLogs::ConvertDwordToString( _In_ DWORD dwErrorCode, _Out_ LPWSTR pwszE
 {
 	////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    DWORD dwDivisor = 1000000000;
+    	DWORD dwDivisor = 1000000000;
 	DWORD dwDigit;
 	
 	////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    for( auto i = 0; i < 10; i++ )
-    {
-        dwDigit = dwErrorCode / dwDivisor;
-        pwszErrorCode[i] = (WCHAR)(L'0' + dwDigit);
-        dwErrorCode %= dwDivisor;
-        dwDivisor /= 10;
-    }
+	for( auto i = 0; i < 10; i++ )
+    	{
+		dwDigit = dwErrorCode / dwDivisor;
+		pwszErrorCode[i] = (WCHAR)(L'0' + dwDigit);
+		dwErrorCode %= dwDivisor;
+		dwDivisor /= 10;
+    	}
 	pwszErrorCode[10] = L'\n';
 	pwszErrorCode[10] = L'\0';
 }
