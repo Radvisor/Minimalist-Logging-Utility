@@ -54,16 +54,13 @@ BOOL DebugLogs::AddErrorCode( _In_ DWORD dwErrorCode )
 	
 	//First part's length + number of decimals to show + escape character + string terminator.
 	WCHAR wszErrorStatement[14 + 10 + 1 + 1] = L"Error code: 0d";
-	WCHAR wszAdditionalStatement[] = L"Note: The error code might not be relevant if it's a pointer error for exemple.\n";
 	
 	////////////////////////////////////////////////////////////////////////////////////////////////////
 
-	this->ConvertDwordToString( dwErrorCode, &wszErrorStatement[14] );	//Address of the decimal part.
+	//14 is the address of the 0-padded number.
+	this->ConvertDwordToString( dwErrorCode, &wszErrorStatement[14] );
 	
 	if( !this->AddString( wszErrorStatement , sizeof(wszErrorStatement) ) )
-		goto end;
-	
-	if( !this->AddString( wszAdditionalStatement, sizeof(wszAdditionalStatement) ) )
 		goto end;
 	
 	bReturnValue = TRUE;
