@@ -2,8 +2,6 @@
 
 #include "debug.h"
 
-using namespace std;
-
 int main(void)
 {
 	InitDebugLogs(L"C:\\Users\\exemple\\Desktop\\logs.txt");
