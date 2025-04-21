@@ -54,7 +54,7 @@ BOOL DebugLogs::AddErrorCode( _In_ DWORD dwErrorCode )
 	
 	//First part's length + number of decimals to show + escape character + string terminator.
 	WCHAR wszErrorStatement[14 + 10 + 1 + 1] = L"Error code: 0d";
-	WCHAR wszAdditionalStatement[] = L"The error code might not be relevant if it's a pointer error for exemple.\n";
+	WCHAR wszAdditionalStatement[] = L"Note: The error code might not be relevant if it's a pointer error for exemple.\n";
 	
 	////////////////////////////////////////////////////////////////////////////////////////////////////
 
