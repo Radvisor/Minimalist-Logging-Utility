@@ -26,8 +26,8 @@ class DebugLogs
 		DebugLogs( _In_ LPCWSTR pwszLogFilePath );
 		~DebugLogs();
 		
-		_Success_(return == TRUE ) BOOL AddString( _In_ LPCWSTR pwszLogString, _In_ DWORD dwStringSize );
-		_Success_(return == TRUE ) BOOL AddErrorCode( _In_ DWORD dwErrorCode );
+		_Success_(return == TRUE) BOOL AddString( _In_ LPCWSTR pwszLogString, _In_ DWORD dwStringSize );
+		_Success_(return == TRUE) BOOL AddErrorCode( _In_ DWORD dwErrorCode );
 	
 	private:
 		void ConvertDwordToString( _In_ DWORD dwErrorCode, _Out_ LPWSTR pwszErrorCode );
