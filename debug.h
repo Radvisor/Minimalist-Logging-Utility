@@ -1,18 +1,17 @@
 #pragma once
 
 #include <windows.h>
-#include <winternl.h>
 
 #include <sal.h>
 
 #define InitDebugLogs(pwszLogFilePath) \
-		DebugLogs debugLogs(pwszLogFilePath)
+	DebugLogs debugLogs(pwszLogFilePath)
 
 #define DebugComment(pwszLogString) \
-		debugLogs.AddString( pwszLogString L"\n", sizeof(pwszLogString) + sizeof(L'\n') )
+	debugLogs.AddString( pwszLogString L"\n", sizeof(pwszLogString) + sizeof(L'\n') )
 
 #define DebugErrorCode(dwErrorCode) \
-		debugLogs.AddErrorCode(dwErrorCode)
+	debugLogs.AddErrorCode(dwErrorCode)
 
 class DebugLogs
 {
